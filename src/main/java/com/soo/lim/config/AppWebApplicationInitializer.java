@@ -19,13 +19,14 @@ public class AppWebApplicationInitializer extends
 
   @Override
   protected String[] getServletMappings() {
-    return new String[] {"/*"};
+    return new String[] {"/app/*"};
   }
-  
+
   @Override
   protected String getServletName() {
-    return "";
+    return "app";
   }
+  
   
   @Override
   protected Filter[] getServletFilters() {
