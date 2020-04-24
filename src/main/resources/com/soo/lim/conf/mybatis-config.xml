@@ -5,7 +5,7 @@
 <configuration>
 
   <!-- 설정 파일에서 사용할 .properties 파일을 지정한다. -->
-  <properties resource="com/soo/lim/conf/jdbc.properties"></properties>
+  <properties resource="com/soo/lim/conf/jdbc.properties"/>
   
   <!-- 도메인 클래스에 별명 부여하기 -->
   <typeAliases>
