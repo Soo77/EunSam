@@ -23,11 +23,6 @@ public class AppWebApplicationInitializer extends
   }
   
   @Override
-  protected String getServletName() {
-    return "";
-  }
-  
-  @Override
   protected Filter[] getServletFilters() {
     return new Filter[] {new CharacterEncodingFilter("UTF-8")};
   }
