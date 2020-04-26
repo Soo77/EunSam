@@ -17,7 +17,6 @@ public class MybatisConfig {
         
     
     LogFactory.useLog4J2Logging();
-    
     SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
     sqlSessionFactoryBean.setDataSource(dataSource);
     sqlSessionFactoryBean.setTypeAliasesPackage("com.soo.lim.domain");
