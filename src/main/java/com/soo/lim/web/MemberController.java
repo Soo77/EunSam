@@ -17,10 +17,10 @@ public class MemberController {
   @Resource
   MemberService memberService;
 
-//  @GetMapping("list")
-//  public void list() throws Exception {
-//    System.out.println("리스트란다");
-//  }
+  @GetMapping("form")
+  public void form() throws Exception {
+    System.out.println("form이란다아아아아");
+  }
   
   @GetMapping("list")
   public void findAll(Model model) throws Exception {
