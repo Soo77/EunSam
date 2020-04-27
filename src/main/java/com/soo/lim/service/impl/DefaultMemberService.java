@@ -18,8 +18,12 @@ public class DefaultMemberService implements MemberService {
 	
 	@Override
 	public List<Member> list() throws Exception {
-		System.out.println("디폴스서비스");
 		return memberDao.findAll();
+	}
+
+	@Override
+	public void insert(Member member) throws Exception {
+		memberDao.insert(member);
 	}
 
 }

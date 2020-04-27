@@ -11,8 +11,14 @@
   </resultMap>
 
 
-<select id="findAll" resultMap="MemberMap">
-        select * from member
-    </select>
+  <select id="findAll" resultMap="MemberMap">
+    select * from member
+  </select>
+
+  <insert>
+    insert into member
+
+
+  </insert>
 
 </mapper>
