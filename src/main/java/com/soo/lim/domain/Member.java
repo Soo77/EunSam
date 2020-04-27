@@ -2,19 +2,22 @@ package com.soo.lim.domain;
 
 public class Member {
   
-  private int no;
+  private String memberNo;
   private String password;
   private String name;
   private String address;
   private String addressDetail;
   private String cardNo;
   private String email;
-  private String moblieNo;
+  private String mobileNo;
 
-  public int getNo() {
-    return no;
+  public String getMemberNo() {
+    return memberNo;
   }
 
+  public void setMemberNo(String memberNo) {
+    this.memberNo = memberNo;
+  }
   public String getPassword() {
     return password;
   }
@@ -63,11 +66,11 @@ public class Member {
     this.email = email;
   }
 
-  public String getMoblieNo() {
-    return moblieNo;
+  public String getMobileNo() {
+    return mobileNo;
   }
 
-  public void setMoblieNo(String moblieNo) {
-    this.moblieNo = moblieNo;
+  public void setMobileNo(String mobileNo) {
+    this.mobileNo = mobileNo;
   }
 }
