@@ -16,6 +16,11 @@ public class AppWebApplicationInitializer extends
   protected Class<?>[] getServletConfigClasses() {
     return new Class<?>[] {WebConfig.class};
   }
+  
+//@Override
+//protected String[] getServletMappings() {
+//  return new String[] {"*"};
+//}
 
   @Override
   protected String[] getServletMappings() {
