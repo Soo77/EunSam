@@ -15,10 +15,6 @@
     select * from member
   </select>
 
-  <insert>
-    insert into member
 
-
-  </insert>
 
 </mapper>
