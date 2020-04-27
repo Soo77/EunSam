@@ -33,7 +33,7 @@ public class MemberController {
   @PostMapping("add")
   public String insert(Member member) throws Exception {
     memberService.insert(member);
-    return "redirect:list";
+    return "redirect:/app/index";
   }
-  
+
 }
