@@ -7,47 +7,67 @@
 <link rel="stylesheet" href="/css/member/signin.css">
 </head>
 <body>
-<div class="tile">
-  <div class="tile-header">
-    <h2 style="color: white; opacity: .75; font-size: 4rem; display: flex; justify-content: center; align-items: center; height: 100%;">SIGN IN</h2>
-  </div>
-
-  <div class="tile-body">
-    <form id="form">
-      <label class="form-input">
-        <i class="material-icons">person</i>
-        <input type="text" autofocus="true" required />
-        <span class="label">Username</span>
-        <span class="underline"></span>
-      </label>
-
-      <label class="form-input">
-        <i class="material-icons">lock</i>
-        <input type="password" required />
-        <span class="label">Password</span>
-        <div class="underline"></div>
-      </label>
-
-      <div class="submit-container clearfix" style="margin-top: 2rem;">
-        <div id="submit" role="button" type="button" class="btn btn-irenic float-right" tabindex="0">
-          <span>SIGN IN</span>
-        </div>
-
-        <div class="login-pending">
-          <div class=spinner>
-            <span class="dot1"></span>
-            <span class="dot2"></span>
-          </div>
-
-          <div class="login-granted-content">
-            <i class="material-icons">done</i>
-          </div>
-        </div>
+<div class="container" id="container">
+  <div class="form-container sign-up-container">
+    <form action="add" method="POST" name="form">
+      <h1>Create Account</h1>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
       </div>
+      <span>or use your email for registration</span>
+      <input type="text" name="name" placeholder="Name" />
+      <input type="text" name="memberNo" placeholder="Id" />
+      <input type="password" name="password" placeholder="Password" />
+      <input type="email" name="email" placeholder="Email" />
+      <button>Sign Up</button>
     </form>
+  </div>
+  <div class="form-container sign-in-container">
+    <form action="#">
+      <h1>Sign in</h1>
+      <div class="social-container">
+        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <span>or use your account</span>
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <a href="#">Forgot your password?</a>
+      <button>Sign In</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>Welcome Back!</h1>
+        <p>To keep connected with us please login with your personal info</p>
+        <button class="ghost" id="signIn">Sign In</button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>Hello, Friend!</h1>
+        <p>Enter your personal details and start journey with us</p>
+        <button class="ghost" id="signUp">Sign Up</button>
+      </div>
+    </div>
   </div>
 </div>
 
-<script src="/js/member/signin.js"></script>
+
+<script>
+  const signUpButton = document.getElementById('signUp');
+  const signInButton = document.getElementById('signIn');
+  const container = document.getElementById('container');
+
+  signUpButton.addEventListener('click', () => {
+    container.classList.add("right-panel-active");
+  });
+
+  signInButton.addEventListener('click', () => {
+    container.classList.remove("right-panel-active");
+  });
+</script>
 </body>
 </html>
