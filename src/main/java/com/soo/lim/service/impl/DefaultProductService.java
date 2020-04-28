@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import com.soo.lim.dao.ProductDao;
 import com.soo.lim.domain.Product;
+import com.soo.lim.service.ProductService;
 
 @Service
 public class DefaultProductService implements ProductService{
