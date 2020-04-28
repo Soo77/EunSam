@@ -11,4 +11,6 @@ public interface ProductDao {
   int update(Product product) throws Exception;
   int delete(int no) throws Exception;
   int countAll() throws Exception;
+  
+  String findCodeName(String codeId) throws Exception;
 }

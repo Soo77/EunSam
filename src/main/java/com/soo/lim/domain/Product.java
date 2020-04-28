@@ -1,6 +1,7 @@
 package com.soo.lim.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Product implements Serializable {
 
@@ -12,6 +13,7 @@ public class Product implements Serializable {
   private String productDetail;
   private String category;
   
+  private List<CommCode> commCodes;
   
   public int getProductNo() {
     return productNo;
@@ -43,11 +45,17 @@ public class Product implements Serializable {
   public void setCategory(String category) {
     this.category = category;
   }
+  public List<CommCode> getCommCodes() {
+    return commCodes;
+  }
+  public void setCommCodes(List<CommCode> commCodes) {
+    this.commCodes = commCodes;
+  }
   @Override
   public String toString() {
     return "Product [productNo=" + productNo + ", productName=" + productName + ", productPrice="
-        + productPrice + ", productDetail=" + productDetail + ", category=" + category + "]";
+        + productPrice + ", productDetail=" + productDetail + ", category=" + category
+        + ", commCodes=" + commCodes + "]";
   }
-  
   
 }

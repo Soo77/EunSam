@@ -27,17 +27,17 @@ public class DefaultProductService implements ProductService{
     }
 	
 	@Override
-	public void insert(Product commCodeGroup) throws Exception {
-		productDao.insert(commCodeGroup);
+	public void insert(Product product) throws Exception {
+		productDao.insert(product);
 	}
 
 	@Override
 	public Product get(int no) throws Exception {
-		Product commCodeGroup = productDao.findBy(no);
-		if (commCodeGroup == null) {
+		Product product = productDao.findBy(no);
+		if (product == null) {
 			throw new Exception("해당 번호의 데이터가 없습니다.");
 		}
-		return commCodeGroup;
+		return product;
 	}
 
 	@Override
@@ -51,6 +51,13 @@ public class DefaultProductService implements ProductService{
 			throw new Exception("해당 데이터가 없습니다!");
 		}
 	}
+
+    @Override
+    public String findCodeName(String codeId) throws Exception {
+      String codenm = productDao.findCodeName(codeId);
+      return codenm;
+    
+    }
 
 }
 

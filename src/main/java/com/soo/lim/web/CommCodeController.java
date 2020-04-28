@@ -8,16 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.soo.lim.domain.CommCode;
-import com.soo.lim.domain.Product;
 import com.soo.lim.service.CommCodeService;
-import com.soo.lim.service.ProductService;
 
 @Controller
 
-@RequestMapping("/product")
-public class ProductController {
+@RequestMapping("/commcode")
+public class CommCodeController {
 
-  @Resource ProductService productService;
   @Resource CommCodeService commCodeService;
   
   @GetMapping("form")
@@ -32,40 +29,32 @@ public class ProductController {
 
   @GetMapping("list")
   public void findAll(Model model) throws Exception {
-    System.out.println("리스트란다");
-    List<Product> products = productService.list();
     List<CommCode> commcodes = commCodeService.list();
-    for (int i=0; i<products.size(); i++) {
-      
-    }
-    
-    System.out.println(products);
-    System.out.println(commcodes);
-    model.addAttribute("products", products);
+    model.addAttribute("commcodes", commcodes);
   }
   
   @PostMapping("add")
-  public String add(Product product) throws Exception {
-	  productService.insert(product);
+  public String add(CommCode commCode) throws Exception {
+	  commCodeService.insert(commCode);
 	  return "redirect:list";
   }
   
   @GetMapping("detail")
   public void detail(Model model, int no) throws Exception {
     System.out.println("컨트롤러에 디테일은 이거거든요:" + no);
-    Product product = productService.get(no);
-    model.addAttribute("product", product);
+    CommCode commCode = commCodeService.get(no);
+    model.addAttribute("commCode", commCode);
   }
    
   @GetMapping("delete")
   public String delete(int no) throws Exception {
-    productService.delete(no);
+    commCodeService.delete(no);
     return "redirect:list";
   }
   
   @PostMapping("update")
-  public String update(Product product) throws Exception {
-    productService.update(product);
+  public String update(CommCode commCode) throws Exception {
+    commCodeService.update(commCode);
     return "redirect:list";
   }
   
