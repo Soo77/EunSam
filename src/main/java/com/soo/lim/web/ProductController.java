@@ -34,7 +34,6 @@ public class ProductController {
   public void findAll(Model model) throws Exception {
     System.out.println("리스트란다");
     List<Product> products = productService.list();
-//    List<CommCode> commcodes = commCodeService.list();
 //    for (int i=0; i<products.size(); i++) {
 //      
 //    }
