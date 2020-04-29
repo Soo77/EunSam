@@ -8,13 +8,19 @@ DROP TABLE IF EXISTS `product` RESTRICT;
 DROP TABLE IF EXISTS `product_option` RESTRICT;
 
 -- 주문
-DROP TABLE IF EXISTS `order` RESTRICT;
+DROP TABLE IF EXISTS `orders` RESTRICT;
 
 -- 주문_상품
 DROP TABLE IF EXISTS `order_product` RESTRICT;
 
 -- 상품사진
 DROP TABLE IF EXISTS `product_photo` RESTRICT;
+
+-- 공통코드그룹
+DROP TABLE IF EXISTS `comm_code_group` RESTRICT;
+
+-- 공통코드
+DROP TABLE IF EXISTS `comm_code` RESTRICT;
 
 -- 회원
 CREATE TABLE `member` (
@@ -72,7 +78,7 @@ ALTER TABLE `product_option`
 	MODIFY COLUMN `option_no` INT NOT NULL AUTO_INCREMENT;
 
 -- 주문
-CREATE TABLE `order` (
+CREATE TABLE `orders` (
 	`order_no`            INT          NOT NULL, -- 주문번호
 	`member_id`           VARCHAR(50)  NOT NULL, -- 회원ID
 	`recipient_name`      VARCHAR(50)  NOT NULL, -- 수령인 이름
@@ -84,13 +90,13 @@ CREATE TABLE `order` (
 );
 
 -- 주문
-ALTER TABLE `order`
-	ADD CONSTRAINT `PK_order` -- 주문 기본키
+ALTER TABLE `orders`
+	ADD CONSTRAINT `PK_orders` -- 주문 기본키
 		PRIMARY KEY (
 			`order_no` -- 주문번호
 		);
 
-ALTER TABLE `order`
+ALTER TABLE `orders`
 	MODIFY COLUMN `order_no` INT NOT NULL AUTO_INCREMENT;
 
 -- 주문_상품
@@ -129,6 +135,34 @@ ALTER TABLE `product_photo`
 ALTER TABLE `product_photo`
 	MODIFY COLUMN `product_photo_no` INT NOT NULL AUTO_INCREMENT;
 
+-- 공통코드그룹
+CREATE TABLE `comm_code_group` (
+	`groupcode_id`   VARCHAR(50) NOT NULL, -- 그룹코드ID
+	`groupcode_name` VARCHAR(50) NULL      -- 그룹코드명
+);
+
+-- 공통코드그룹
+ALTER TABLE `comm_code_group`
+	ADD CONSTRAINT `PK_comm_code_group` -- 공통코드그룹 기본키
+		PRIMARY KEY (
+			`groupcode_id` -- 그룹코드ID
+		);
+
+-- 공통코드
+CREATE TABLE `comm_code` (
+	`groupcode_id` VARCHAR(50)  NOT NULL, -- 그룹코드ID
+	`code_id`      VARCHAR(50)  NOT NULL, -- 코드
+	`code_name`    VARCHAR(100) NOT NULL  -- 코드값
+);
+
+-- 공통코드
+ALTER TABLE `comm_code`
+	ADD CONSTRAINT `PK_comm_code` -- 공통코드 기본키
+		PRIMARY KEY (
+			`groupcode_id`, -- 그룹코드ID
+			`code_id`       -- 코드
+		);
+
 -- 상품옵션
 ALTER TABLE `product_option`
 	ADD CONSTRAINT `FK_product_TO_product_option` -- 상품 -> 상품옵션
@@ -140,8 +174,8 @@ ALTER TABLE `product_option`
 		);
 
 -- 주문
-ALTER TABLE `order`
-	ADD CONSTRAINT `FK_member_TO_order` -- 회원 -> 주문
+ALTER TABLE `orders`
+	ADD CONSTRAINT `FK_member_TO_orders` -- 회원 -> 주문
 		FOREIGN KEY (
 			`member_id` -- 회원ID
 		)
@@ -151,11 +185,11 @@ ALTER TABLE `order`
 
 -- 주문_상품
 ALTER TABLE `order_product`
-	ADD CONSTRAINT `FK_order_TO_order_product` -- 주문 -> 주문_상품
+	ADD CONSTRAINT `FK_orders_TO_order_product` -- 주문 -> 주문_상품
 		FOREIGN KEY (
 			`order_no` -- 주문번호
 		)
-		REFERENCES `order` ( -- 주문
+		REFERENCES `orders` ( -- 주문
 			`order_no` -- 주문번호
 		);
 
@@ -187,4 +221,14 @@ ALTER TABLE `product_photo`
 		)
 		REFERENCES `product` ( -- 상품
 			`product_no` -- 상품번호
+		);
+
+-- 공통코드
+ALTER TABLE `comm_code`
+	ADD CONSTRAINT `FK_comm_code_group_TO_comm_code` -- 공통코드그룹 -> 공통코드
+		FOREIGN KEY (
+			`groupcode_id` -- 그룹코드ID
+		)
+		REFERENCES `comm_code_group` ( -- 공통코드그룹
+			`groupcode_id` -- 그룹코드ID
 		);
