@@ -6,6 +6,8 @@ import com.soo.lim.dao.MemberDao;
 import com.soo.lim.domain.Member;
 import com.soo.lim.service.MemberService;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -24,6 +26,16 @@ public class DefaultMemberService implements MemberService {
 	@Override
 	public void insert(Member member) throws Exception {
 		memberDao.insert(member);
+	}
+
+	@Override
+	public Member get(String id, String password) throws Exception {
+		HashMap<String, Object> params = new HashMap<>();
+
+		params.put("id", id);
+		params.put("password", password);
+		Member member = memberDao.findByIdPassword(params);
+		return member;
 	}
 
 }
