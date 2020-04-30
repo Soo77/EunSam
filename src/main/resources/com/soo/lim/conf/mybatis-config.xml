@@ -37,6 +37,8 @@
   <mappers>
   
     <!-- SQL 문이 저장된 파일 -->
+    <mapper resource="com/soo/lim/mapper/CommCodeMapper.xml"/>
+    <mapper resource="com/soo/lim/mapper/ProductMapper.xml"/>
     <mapper resource="com/soo/lim/mapper/MemberMapper.xml"/>
   </mappers>
 </configuration>
