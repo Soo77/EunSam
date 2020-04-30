@@ -13,6 +13,8 @@ public class Product implements Serializable {
   private String productDetail;
   private String category;
   
+  
+  private ProductPhoto productPhoto;
   private List<CommCode> commCodes;
   
   public int getProductNo() {
@@ -51,11 +53,17 @@ public class Product implements Serializable {
   public void setCommCodes(List<CommCode> commCodes) {
     this.commCodes = commCodes;
   }
+  public ProductPhoto getProductPhoto() {
+    return productPhoto;
+  }
+  public void setProductPhoto(ProductPhoto productPhoto) {
+    this.productPhoto = productPhoto;
+  }
   @Override
   public String toString() {
     return "Product [productNo=" + productNo + ", productName=" + productName + ", productPrice="
         + productPrice + ", productDetail=" + productDetail + ", category=" + category
-        + ", commCodes=" + commCodes + "]";
+        + ", productPhoto=" + productPhoto + ", commCodes=" + commCodes + "]";
   }
   
 }

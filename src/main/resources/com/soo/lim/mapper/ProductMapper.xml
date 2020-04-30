@@ -11,19 +11,28 @@
     <result column="product_price" property="productPrice"/>
     <result column="product_detail" property="productDetail"/>
     <result column="category" property="category"/>
+    <collection resultMap="ProductPhotoMap" property="productPhoto" />
+  </resultMap>
+  
+  <resultMap type="ProductPhoto" id="ProductPhotoMap">
+    <id column="product_photo_no" property="productPhotoNo"/>
+    <result column="product_no" property="productNo"/>
+    <result column="file_path" property="filePath"/>
   </resultMap>
 
 
 <select id="findAll" resultMap="ProductMap">
-select p.*, cc.code_name
+select p.*, cc.code_name, photo.file_path
 from comm_code cc
 	inner join product p
 	on p.category = cc.code_id
+	inner join product_photo photo
+	on p.product_no = photo.product_no
 where cc.groupcode_id = "M001";
 </select>
 
 <select id="findCodeName" parameterType="String" resultMap="ProductMap">
-select cc.code_name
+select cc.code_namexx	
 from comm_code cc
 	inner join product p
 	on p.category = cc.code_id

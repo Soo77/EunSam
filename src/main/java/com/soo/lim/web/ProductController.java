@@ -40,6 +40,13 @@ public class ProductController {
 //    
 //    System.out.println(products);
 //    System.out.println(commcodes);
+    List<CommCode> commcodes = commCodeService.list();
+    for (int i=0; i<products.size(); i++) {
+      
+    }
+    
+    System.out.println(products);
+    System.out.println(commcodes);
     model.addAttribute("products", products);
   }
   
