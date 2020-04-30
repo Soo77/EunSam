@@ -24,7 +24,10 @@ public class ProductController {
   public void form() throws Exception {
     System.out.println("안녕?");
   }
-  
+  @GetMapping("index")
+  public void index() throws Exception {
+
+  }
   @GetMapping("db")
   public void db() throws Exception {
     System.out.println("안녕?");
