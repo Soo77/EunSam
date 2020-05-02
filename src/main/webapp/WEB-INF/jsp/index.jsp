@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>림심</title>
     <link rel="stylesheet" href="/css/main/index.css">
 </head>
 <body>
@@ -16,13 +16,13 @@
                 <img src="https://s33.postimg.cc/fg6w0x1a7/Icon-headset.png" alt="headset-icon">
                 <span class="support-tel" tabindex="0"><data value="24/7 037-2339-9874">24/7 037-2339-9874</data></span>
             </div>
-            <h2><a href="#">arbuzz</a></h2>
+            <h2><a href="#">EunSam</a></h2>
             <div class="top-menu clearfix">
                 <ul>
                     <li><a href="#" class="lang-setting">EN</a><img src="https://s33.postimg.cc/ltvz478r3/Icon-select.png" alt="select-icon"></li>
                     <li><a href="#" class="currency">USD</a><img src="https://s33.postimg.cc/ltvz478r3/Icon-select.png" alt="select-icon"></li>
                     <li><a href="#" class="purchase-list"><img src="https://s33.postimg.cc/ahjdmecwv/Icon-lock.png" alt="lock-icon"></a></li>
-                    <li><img src="https://s33.postimg.cc/7ng88wsq7/Icon-face.png" alt="face-icon"><a href="#" class="user-logIn">LOG IN</a></li>
+                    <li><img src="https://s33.postimg.cc/7ng88wsq7/Icon-face.png" alt="face-icon"><a href="/app/member/form" class="user-logIn">LOG IN</a></li>
                 </ul>
             </div>
         </div>
