@@ -16,7 +16,7 @@ public class AuthFilter implements Filter {
 
   @Override
   public void init(FilterConfig filterConfig) throws ServletException {
-      System.out.println(filterConfig.getInitParameter("path"));
+      System.out.println(filterConfig.getInitParameter("path") + "@@@@@@@@@@@@@@@@@@@@@@이거 는??");
       path = filterConfig.getInitParameter("path").split(",");
   }
 
