@@ -58,7 +58,7 @@
           <p class="price">${product.productPrice}<sup>WON</sup></p>
           <p class="descr">${product.productDetail}</b></p>
 				<br>
-				<a href="#"><p>Add to cart</p></a></div>
+				<a href="../product/form"><p>Add to cart</p></a></div>
 			</div>
 			
 	</c:forEach>
