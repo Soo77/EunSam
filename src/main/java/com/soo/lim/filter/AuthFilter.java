@@ -16,7 +16,7 @@ public class AuthFilter implements Filter {
 
   @Override
   public void init(FilterConfig filterConfig) throws ServletException {
-      System.out.println(filterConfig.getInitParameter("path") + "@@@@@@@@@@@@@@@@@@@@@@이거 는??");
+      System.out.println(filterConfig.getInitParameter("path"));
       path = filterConfig.getInitParameter("path").split(",");
   }
 
@@ -27,9 +27,10 @@ public class AuthFilter implements Filter {
 
       String pathInfo = httpReq.getPathInfo();
       for (String p : path){
-          if (pathInfo.endsWith(p)){
+        // 로그인 했는지 안했는지 여부
+        if (pathInfo.endsWith(p)){
               if (httpReq.getSession().getAttribute("loginUser") == null) {
-                  httpResp.sendRedirect("../auth/signin");
+                  httpResp.sendRedirect("../member/form");
                   return;
               } else {
                   // 로그인했으면 브레이크

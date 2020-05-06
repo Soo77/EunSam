@@ -21,9 +21,7 @@ public class MemberController {
   @Resource
   MemberService memberService;
   
-  @GetMapping("form")
-  public void form() throws Exception {
-  }
+
   
   @GetMapping("list")
   public void findAll(Model model) throws Exception {
@@ -36,19 +34,6 @@ public class MemberController {
   @PostMapping("add")
   public String insert(Member member) throws Exception {
     memberService.insert(member);
-    return "redirect:/app/index";
-  }
-
-  @PostMapping("signin")
-  public String signin(HttpServletResponse response, HttpSession session, String id, String password) throws Exception {
-    Cookie cookie = new Cookie("id", id);
-    cookie.setMaxAge(60 * 60 *24 * 15);
-    response.addCookie(cookie);
-
-    Member member = memberService.get(id, password);
-
-    session.setAttribute("loginUser", member);
-
     return "redirect:/app/index";
   }
 }
