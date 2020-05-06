@@ -9,7 +9,7 @@
 <body>
 <div class="container" id="container">
   <div class="form-container sign-up-container">
-    <form action="add" method="POST" name="form">
+    <form action="../member/add" method="POST" name="form">
       <h1>Create Account</h1>
       <div class="social-container">
         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -25,7 +25,7 @@
     </form>
   </div>
   <div class="form-container sign-in-container">
-    <form action="signin" method="POST" name="form">
+    <form action="login" method="POST" name="form">
       <h1>Sign in</h1>
       <div class="social-container">
         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -33,7 +33,7 @@
         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
       </div>
       <span>or use your account</span>
-      <input type="text" name="id" placeholder="ID" />
+      <input type="text" name="memberNo" placeholder="ID" value='${cookie.memberNo.value}' />
       <input type="password" name="password" placeholder="Password" />
       <a href="#">Forgot your password?</a>
       <button>Sign In</button>

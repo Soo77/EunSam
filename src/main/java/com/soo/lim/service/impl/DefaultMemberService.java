@@ -35,4 +35,12 @@ public class DefaultMemberService implements MemberService {
         return member;
     }
 
+    @Override
+    public Member get(String memberNo) throws Exception {
+        Member member = memberDao.findBy(memberNo);
+        if (member == null) {
+            throw new Exception("해당 번호의 데이터가 없습니다!");
+        }
+        return member;
+    }
 }

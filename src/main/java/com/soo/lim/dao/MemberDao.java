@@ -14,4 +14,6 @@ public interface MemberDao {
 
   Member findByIdPassword(Map<String, Object> params) throws Exception;
 
+  Member findBy(String memberNo) throws Exception;
+
 }

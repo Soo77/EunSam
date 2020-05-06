@@ -35,20 +35,16 @@
 						<c:if test="${empty loginUser}">
 							<li><img
 								src="https://s33.postimg.cc/7ng88wsq7/Icon-face.png"
-								alt="face-icon"><a href="/app/member/form"
-								class="user-logIn">LOG IN</a></li>
+								alt="face-icon"><a href="/app/auth/form"
+								class="user-logIn">LOG IN<a></li>
 						</c:if>
-
 						<c:if test="${not empty loginUser}">
-							<li><a href="#" class='user-logIn'>Hello! ${member.name}</a></li>
+							<li><a href="#" class='user-logIn'>Hello! ${loginUser.memberNo}</a></li>
+							<li><a href="#" class='user-logIn'>Hello! ${member.memberNo}</a></li>
 						</c:if>
 						<c:if test="${not empty loginUser}">
 							<li><a class='user-logIn' href='/app/auth/logout'>Sign out</a></li>
 						</c:if>
-
-
-
-
 					</ul>
 				</div>
 			</div>
