@@ -26,12 +26,15 @@ public class DefaultMemberService implements MemberService {
     }
 
     @Override
-    public Member get(String id, String password) throws Exception {
+    public Member get(String memberNo, String password) throws Exception {
         HashMap<String, Object> params = new HashMap<>();
 
-        params.put("id", id);
+        params.put("memberNo", memberNo);
         params.put("password", password);
         Member member = memberDao.findByIdPassword(params);
+        if (member == null) {
+            System.out.println("못받음");
+        }
         return member;
     }
 

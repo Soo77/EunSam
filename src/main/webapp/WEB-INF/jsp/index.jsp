@@ -40,9 +40,6 @@
 						</c:if>
 						<c:if test="${not empty loginUser}">
 							<li><a href="#" class='user-logIn'>Hello! ${loginUser.memberNo}</a></li>
-							<li><a href="#" class='user-logIn'>Hello! ${member.memberNo}</a></li>
-						</c:if>
-						<c:if test="${not empty loginUser}">
 							<li><a class='user-logIn' href='/app/auth/logout'>Sign out</a></li>
 						</c:if>
 					</ul>
