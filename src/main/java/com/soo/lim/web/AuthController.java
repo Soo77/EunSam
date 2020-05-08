@@ -25,15 +25,10 @@ public class AuthController {
   }
   @PostMapping("login")
   public String login(HttpServletResponse response, HttpSession session, String memberNo, String password) throws Exception {
-    System.out.println("#####################################################################################  " + memberNo);
     Cookie cookie = new Cookie("memberNo", memberNo);
-    System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  " + memberNo);
     cookie.setMaxAge(60 * 60 * 24 * 15);
     response.addCookie(cookie);
     Member member = memberService.get(memberNo, password);
-    if (member == null){
-      System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 암것도 없으무ㅜㅜ");
-    }
     session.setAttribute("loginUser", member);
     return "redirect:../index";
   }

@@ -20,9 +20,7 @@ public class MemberController {
   
   @Resource
   MemberService memberService;
-  
 
-  
   @GetMapping("list")
   public void findAll(Model model) throws Exception {
     System.out.println("일단 한글 테스트");
@@ -34,6 +32,6 @@ public class MemberController {
   @PostMapping("add")
   public String insert(Member member) throws Exception {
     memberService.insert(member);
-    return "redirect:/app/index";
+    return "redirect:/app/auth/form";
   }
 }
