@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<title>Title</title>
+<title>SignIn or SignUp</title>
 <link rel="stylesheet" href="/css/member/signin.css">
 </head>
 <body>
