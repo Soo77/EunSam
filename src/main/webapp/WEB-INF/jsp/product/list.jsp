@@ -52,13 +52,14 @@
 <div class="list">
 	<c:forEach items="${products}" var="product">
 	
-			<div class="product">
+<%-- 			<div OnClick="location.href='../product/detail?no=${product.productNo}'" class="product"> --%>
+			<div OnClick="location.href='../product/detail2'" class="product">
 				<img class='max-small' alt="shoes1" src="<%=request.getContextPath()%>/upload/product/${product.productPhoto.filePath}">
 				<div><h2>${product.productName}</h2>
           <p class="price">${product.productPrice}<sup>WON</sup></p>
           <p class="descr">${product.productDetail}</b></p>
 				<br>
-				<a href="#"><p>Add to cart</p></a></div>
+				<a href="../product/form"><p>Add to cart</p></a></div>
 			</div>
 			
 	</c:forEach>
@@ -70,7 +71,7 @@
 				<br>
 				<a href="#"><p>Add to cart</p></a></div>
 			</div>
-			<div class="product">
+			<div class="product">	
 				<img alt="shoes3" src="https://i.ibb.co/1TKmGRd/shoes3.jpg">
 				<div><h2>SOME SHOES</h2>
            <p class="price">15<sup>.00</sup></p>
