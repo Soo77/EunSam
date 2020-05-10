@@ -104,7 +104,7 @@
                   ${product.productPrice} won
                 </div>
                 <a>Free shipping</a>
-              </div>
+              </div> 
               <div class="swatches">
                 <div class="swatch clearfix" data-option-index="0">
                   <div class="header">Size</div>
