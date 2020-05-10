@@ -33,6 +33,7 @@ public class DefaultProductService implements ProductService{
 
 	@Override
 	public Product get(int no) throws Exception {
+	  System.out.println(no);
 		Product product = productDao.findBy(no);
 		if (product == null) {
 			throw new Exception("해당 번호의 데이터가 없습니다.");
@@ -52,12 +53,8 @@ public class DefaultProductService implements ProductService{
 		}
 	}
 
-    @Override
-    public String findCodeName(String codeId) throws Exception {
-      String codenm = productDao.findCodeName(codeId);
-      return codenm;
-    
-    }
+
+
 
 }
 

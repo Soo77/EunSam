@@ -24,10 +24,10 @@ public class ProductController {
   public void form() throws Exception {
     System.out.println("안녕?");
   }
-  @GetMapping("detail2")
-  public void detail2() throws Exception {
-    System.out.println("detail2");
-  }
+//  @GetMapping("detail2")
+//  public void detail2() throws Exception {
+//    System.out.println("detail2");
+//  }
   @GetMapping("index")
   public void index() throws Exception {
 
@@ -63,11 +63,11 @@ public class ProductController {
 	  return "redirect:list";
   }
   
-  @GetMapping("detail")
-  public void detail(Model model, int no) throws Exception {
-//    System.out.println("컨트롤러에 디테일은 이거거든요:" + no);
-//    Product product = productService.get(no);
-//    model.addAttribute("product", product);
+  @GetMapping("detail2")
+  public void detail(Model model, int productNo) throws Exception {
+    System.out.println("컨트롤러에 디테일은 이거거든요:" + productNo);
+    Product product = productService.get(productNo);
+    model.addAttribute("product", product);
     
   }
    

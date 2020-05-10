@@ -95,13 +95,13 @@
             </div>
           </div>
           <div class="right-col">
-            <h1 itemprop="name">Tony Hunfinger T-Shirt New York</h1>
+            <h1 itemprop="name">${product.productName}</h1>
             <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
               <meta itemprop="priceCurrency" content="USD">
               <link itemprop="availability" href="http://schema.org/InStock">
               <div class="price-shipping">
-                <div class="price" id="price-preview" quickbeam="price" quickbeam-price="800">
-                  $800.00
+                <div class="price" id="price-preview" quickbeam="price" quickbeam-price="${product.productPrice}">
+                  ${product.productPrice} won
                 </div>
                 <a>Free shipping</a>
               </div>
