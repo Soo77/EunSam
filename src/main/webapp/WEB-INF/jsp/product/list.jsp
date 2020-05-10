@@ -53,7 +53,7 @@
 	<c:forEach items="${products}" var="product">
 	
 <%-- 			<div OnClick="location.href='../product/detail?no=${product.productNo}'" class="product"> --%>
-			<div OnClick="location.href='../product/detail2'" class="product">
+			<div OnClick="location.href='../product/detail2?productNo=${product.productNo}'" class="product">
 				<img class='max-small' alt="shoes1" src="<%=request.getContextPath()%>/upload/product/${product.productPhoto.filePath}">
 				<div><h2>${product.productName}</h2>
           <p class="price">${product.productPrice}<sup>WON</sup></p>

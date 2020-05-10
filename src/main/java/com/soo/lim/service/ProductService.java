@@ -14,5 +14,4 @@ public interface ProductService {
 	void delete(int no) throws Exception;
 	int countAll() throws Exception;
 	
-	String findCodeName(String codeId) throws Exception;
 }
