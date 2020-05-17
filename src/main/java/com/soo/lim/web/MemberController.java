@@ -17,7 +17,7 @@ import com.soo.lim.service.MemberService;
 
 @RequestMapping("/member")
 public class MemberController {
-  
+   
   @Resource
   MemberService memberService;
 
