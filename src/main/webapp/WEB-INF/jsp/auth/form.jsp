@@ -25,7 +25,7 @@
     </form>
   </div>
   <div class="form-container sign-in-container">
-    <form action="login" method="POST" name="signinform" onsubmit="return checkAll();">
+    <form action="login" method="POST" name="signinform">
       <h1>Sign in</h1>
       <div class="social-container">
         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -33,12 +33,10 @@
         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
       </div>
       <span>or use your account</span>
-      <input type="text" name="memberNo" placeholder="ID" value='${cookie.memberNo.value}' onblur="memberNo_check();" required/>
-      <div id="memberNo_chk" class="vali_check"></div>
-      <input type="password" name="password" placeholder="Password" onblur="password_check();" required/>
-      <div id="memberNoPassword_chk" class="vali_check"></div>
+      <input type="text" name="memberNo" placeholder="ID" value='${cookie.memberNo.value}' required/>
+      <input type="password" name="password" placeholder="Password" required/>
       <a href="#">Forgot your password?</a>
-      <button onblur="check_signin();">Sign In</button>
+      <button>Sign In</button>
     </form>
   </div>
   <div class="overlay-container">
@@ -56,62 +54,17 @@
     </div>
   </div>
 </div>
-
 <script>
   const signUpButton = document.getElementById('signUp');
   const signInButton = document.getElementById('signIn');
   const container = document.getElementById('container');
-
   signUpButton.addEventListener('click', () => {
     container.classList.add("right-panel-active");
   });
-
   signInButton.addEventListener('click', () => {
     container.classList.remove("right-panel-active");
   });
 </script>
-
-
-<script type="text/javascript">
-		function email_check() {
-			var eCheckFlag = false;
-			console.log("memberNo_check");
-			if (signinform.memberNo.value == "") { // 빈 값 검사
-				document.getElementById("memberNo_chk").innerHTML = "이메일을 입력하세요.";
-				$("#memberNo_chk").css('color', 'red');
-			} else {
-				document.getElementById("memberNo_chk").innerHTML = "";
-				eCheckFlag = true;
-			}
-			return eCheckFlag;
-		}
-
-		function password_check() {
-			var pCheckFlag = false;
-			console.log("password_check");
-			if (signinform.password.value == "") {
-				document.getElementById("password_chk").innerHTML = "비밀번호를 입력하세요.";
-				$("#password_chk").css('color', 'red');
-			} else {
-				document.getElementById("password_chk").innerHTML = "";
-				pCheckFlag = true;
-			}
-
-			return pCheckFlag;
-		}
-
-		function checkAll() {
-			var checkCnt = 0;
-			if (memberNo_check()) {
-				checkCnt++;
-			}
-			if (password_check()) {
-				checkCnt++;
-			}
-
-			return checkCnt == 2 ? true : false;
-		};
-	</script>
 
 </body>
 </html>
