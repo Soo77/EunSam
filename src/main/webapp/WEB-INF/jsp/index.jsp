@@ -39,7 +39,7 @@
 								class="user-logIn">LOG IN<a></li>
 						</c:if>
 						<c:if test="${not empty loginUser}">
-							<li><a href="#" class='user-logIn'>Hello! ${loginUser.memberNo}</a></li>
+							<li><a href="#" class='user-logIn'>Hello! ${loginUser.name}</a></li>
 							<li><a class='user-logIn' href='/app/auth/logout'>Sign out</a></li>
 						</c:if>
 					</ul>
