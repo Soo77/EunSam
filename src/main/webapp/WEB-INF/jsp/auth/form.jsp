@@ -54,6 +54,8 @@
     </div>
   </div>
 </div>
+
+// signup and signin 애니메이션 js부분.
 <script>
   const signUpButton = document.getElementById('signUp');
   const signInButton = document.getElementById('signIn');
@@ -66,5 +68,28 @@
   });
 </script>
 
+// json의 결과값으로 id랑 password 맞는지 여부.
+<script>
+		function check_signin() {
+			var userEmail = $("input[name=email]").val();
+			var userPssword = $("input[name=password]").val();
+
+			$
+					.post(
+							"/app/json/auth/login",
+							{
+								email : userEmail,
+								password : userPssword
+							},
+							function(data) {
+								if (data.state == "success") {
+									window.location.href = '/app/index';
+								} else {
+									document.getElementById("password_chk").innerHTML = "가입하지 않은 아이디거나, 잘못된 비밀번호입니다.";
+									$("#password_chk").css('color', 'red');
+								}
+							});
+		}
+</script>
 </body>
 </html>

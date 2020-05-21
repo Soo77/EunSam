@@ -39,4 +39,5 @@ public class AuthController {
 
     return "redirect:../index";
   }
+
 }
