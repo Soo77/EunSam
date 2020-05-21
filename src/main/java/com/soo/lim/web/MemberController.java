@@ -23,7 +23,6 @@ public class MemberController {
 
   @GetMapping("list")
   public void findAll(Model model) throws Exception {
-    System.out.println("일단 한글 테스트");
     List<Member> members = memberService.list();
     System.out.println(members);
     model.addAttribute("members", members);
@@ -33,5 +32,11 @@ public class MemberController {
   public String insert(Member member) throws Exception {
     memberService.insert(member);
     return "redirect:/app/auth/form";
+  }
+
+  @GetMapping("checkMemberNoPw")
+  public Member checkMemberNPw (String memberNo, String password) throws Exception {
+
+    return memberService.get(memberNo, password);
   }
 }
