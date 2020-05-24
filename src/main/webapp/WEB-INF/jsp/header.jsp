@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/css/main/index.css"> 
+<link rel="stylesheet" href="/css/main/header.css"> 
+
 <header id="main-header">
 	<section id="top-contents-box">
 		<div class="top-contents">

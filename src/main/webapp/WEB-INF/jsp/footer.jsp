@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <meta charset="UTF-8">
-<!-- <link rel="stylesheet" href="/css/main/index.css"> -->
+<link rel="stylesheet" href="/css/main/footer.css"> 
+
 <footer id="main-footer">
 		<section class="footer-top">
 			<h4 hidden>footer product list</h4>
