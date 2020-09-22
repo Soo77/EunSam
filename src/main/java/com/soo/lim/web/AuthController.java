@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/auth")
 @Controller
 public class AuthController {
-
+// test
   @Resource
   private MemberService memberService;
 
